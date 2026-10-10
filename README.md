@@ -25,4 +25,4 @@ This is the same package deployed to the live Netlify website. It includes the u
 
 [Google Scholar - publication profile](https://scholar.google.com/citations?user=n_KkLYUAAAAJ&hl=en)
 
-Selected co-authored publications in cybersecurity, network security and network architecture are also linked from the live portfolio.
+The live portfolio highlights selected publications where Akshay Kumar is first author: Intrusion Detection Systems and Cloud Communications and Networks. Author order was verified against the publisher pages.
