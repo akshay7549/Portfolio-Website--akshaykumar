@@ -20,3 +20,9 @@ This is the same package deployed to the live Netlify website. It includes the u
 
 - [GitHub](https://github.com/akshay7549)
 - [LinkedIn](https://www.linkedin.com/in/akshay-kumar-090990249/)
+
+## Research
+
+[Google Scholar - publication profile](https://scholar.google.com/citations?user=n_KkLYUAAAAJ&hl=en)
+
+Selected co-authored publications in cybersecurity, network security and network architecture are also linked from the live portfolio.
