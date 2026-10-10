@@ -1,6 +1,6 @@
 # Akshay Kumar — Portfolio
 
-Personal portfolio of Akshay Kumar, System & Network Engineer and aspiring penetration tester. Built with HTML, CSS and JavaScript.
+Personal portfolio of Akshay Kumar, System & Network Engineer, Researcher and aspiring penetration tester. Built with HTML, CSS and JavaScript.
 
 **Live website:** [View portfolio](https://splendorous-cactus-88b8bd.netlify.app/)
 
