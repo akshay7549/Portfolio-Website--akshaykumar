@@ -13,7 +13,7 @@ Personal portfolio of Akshay Kumar, System & Network Engineer, Researcher and as
 [Download the updated portfolio ZIP](akshay-portfolio-updated-hosting.zip)
 
 
-This is the same package deployed to the live Hostinger website. It includes the updated professional title, experience, skills, education, certifications, research highlights and project links, based on the GitHub and LinkedIn profiles.
+This deployable package is generated from the current index.html and assets/ source. Upload it to Hostinger to publish these changes; changing this repository alone does not confirm a live deployment.
 
 
 ## Open or deploy
@@ -47,4 +47,18 @@ The live portfolio highlights selected publications where Akshay Kumar is first 
 
 ## Current improvements
 
-Mobile navigation, prominent name and role, local resume download, eight project details, keyboard-accessible blog dialogs, real project previews and verified publisher/DOI links.
+Mobile navigation, prominent name and role, local resume download, eight project details, keyboard-accessible blog dialogs, real project previews and publisher/DOI links.
+
+### Mobile layout and reading-time fixes
+
+- At widths up to 700px, the introduction and four action buttons appear before the portrait and service grid. Cards use normal grid flow instead of overlapping absolute positions.
+- Home, section and Journey anchors account for the sticky header. Decorative elements do not create horizontal overflow.
+- Contact labels and values use separate stacked rows, including wrapping for long email addresses. Mobile action buttons have a minimum 44px height.
+- All five field-note cards and their dialogs calculate reading time from the actual article body at 200 words per minute, rounded up with a one-minute minimum. Existing short notes correctly show 1 MIN READ. Article text is unchanged.
+- Journey is inside the main landmark, before Contact and the footer.
+- Canonical URL, Open Graph and Twitter metadata reference the production domain and existing portrait asset.
+- Project dialogs link to the relevant repositories. Research links distinguish direct posts from general LinkedIn profile references; exact ICETCE and ISBM post URLs still need to be supplied.
+
+Validation: browser checks at 320x740, 390x844, 768x1024 and 1440x900; zero horizontal overflow at those sizes, mobile menu and Home/Contact navigation, article dialog reading-time labels, focus containment, Escape dismissal and focus return. JavaScript syntax and local asset/anchor checks also pass.
+
+To rebuild the upload ZIP with PowerShell, run `Compress-Archive -Path index.html, assets -DestinationPath akshay-portfolio-updated-hosting.zip -Force`. The ZIP root must contain index.html and assets/, including assets/qa-fixes.css.
