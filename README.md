@@ -47,7 +47,16 @@ The live portfolio highlights selected publications where Akshay Kumar is first 
 
 ## Current improvements
 
-Mobile navigation, prominent name and role, local resume download, eight project details, keyboard-accessible blog dialogs, real project previews and publisher/DOI links.
+Mobile navigation, prominent name and role, local resume download, twelve project details, keyboard-accessible blog dialogs, real project previews and publisher/DOI links.
+
+### Projects update — 24 October 2026
+
+- Added NextGen Lapy World with repair booking, tracking and device catalogue details verified from https://nextgenlapyworld.in/.
+- Added Khushi Decoration & Seasonal Store, Python Inventory Management and Python ATM Interface from the public repositories under https://github.com/akshay7549.
+- Added repository links to the existing CCTV and Kasvi Place project dialogs. Existing project content and the deployed Sukoon stack remain unchanged.
+- Checked JavaScript syntax, twelve unique project detail IDs, sibling card structure, local assets and HTTPS link formatting. Browser preview confirmed the new cards, NextGen dialog activation, Escape dismissal and focus return.
+
+The hosting ZIP includes these updates. GitHub source publication does not deploy the Hostinger website; upload the ZIP contents to the domain's `public_html` directory to publish.
 
 ### Mobile layout and reading-time fixes
 
