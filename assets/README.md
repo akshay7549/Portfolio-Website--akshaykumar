@@ -2,7 +2,7 @@
 
 Keep these files in the assets folder beside the root index.html.
 
-The resume PDF exports the visible LinkedIn Featured resume page unchanged. Project previews are genuine screenshots, not generated artwork.
+The resume PDF is a two-page, selectable-text document updated on 24 October 2026. It adds Freelance Web Developer experience and NextGen, Sukoon and Khushi projects to the existing resume. Rebuild it with `tools/build_resume.py` using Python, ReportLab and the Calibri fonts. Project previews are genuine screenshots, not generated artwork.
 
 Captured on 24 October 2026:
 - nextgen-live-preview.jpg: https://nextgenlapyworld.in/ live homepage.
