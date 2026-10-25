@@ -1,5 +1,13 @@
 # Akshay Kumar — Portfolio
 
+## SEO update — 25 October 2026
+
+- Updated portfolio metadata for freelance web development and network engineering in New Delhi, while retaining the existing research and cybersecurity content.
+- Added a visible services section and `web-development.html` with real project references, enquiry links and project-scope FAQs.
+- Added Person/ProfilePage and Service/Breadcrumb structured data, canonical URLs, `robots.txt` and a two-page `sitemap.xml`.
+- Search Console ownership uses the HTML verification tag; website DNS records are not changed.
+- The hosting ZIP now includes `index.html`, `web-development.html`, `robots.txt`, `sitemap.xml` and `assets/` at its root.
+
 
 Personal portfolio of Akshay Kumar, System & Network Engineer, Researcher and aspiring penetration tester. Built with HTML, CSS and JavaScript.
 
