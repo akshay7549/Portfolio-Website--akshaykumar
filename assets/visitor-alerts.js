@@ -26,28 +26,12 @@
       if (response.ok || response.status === 429) save(sessionStorage, 'portfolio-visit-sent-v1', 'yes');
     } catch { /* Analytics never interrupts the portfolio. */ }
   };
-  const choices = () => {
-    document.getElementById('visitor-consent-panel')?.remove();
-    const panel = document.createElement('section');
-    panel.id = 'visitor-consent-panel';
-    panel.setAttribute('role', 'region');
-    panel.setAttribute('aria-label', 'Visitor analytics preferences');
-    panel.innerHTML = '<p><strong>Visitor analytics</strong><br>May I send your page, visit time, device and referral source to my private Telegram inbox? Your name and contact details are not collected. <a href="/privacy.html">Privacy details</a></p><div><button type="button" data-choice="no">No thanks</button><button type="button" data-choice="yes">Allow analytics</button></div>';
-    panel.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
-      save(localStorage, key, button.dataset.choice); panel.remove();
-      if (button.dataset.choice === 'yes') void send();
-    }));
-    document.body.append(panel);
-  };
-  if (excluded()) return;
+  // Preferences are available on the privacy page through the footer.
+  // Never display an automatic prompt or a floating control.
+  if (excluded() || read(localStorage, key) !== 'yes') return;
   fetch(endpoint, { credentials: 'omit', cache: 'no-store' }).then(r => r.ok ? r.json() : { enabled: false }).then(config => {
     if (!config.enabled) return;
-    const preferences = document.createElement('button');
-    preferences.type = 'button'; preferences.id = 'visitor-privacy-settings';
-    preferences.textContent = 'Privacy settings'; preferences.addEventListener('click', choices);
-    document.body.append(preferences);
-    if (read(localStorage, key) === null) choices();
-    else void send();
+    void send();
     document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') void send(); });
   }).catch(() => {});
 })();

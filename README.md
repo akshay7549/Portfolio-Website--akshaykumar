@@ -2,7 +2,7 @@
 
 ## Optional Telegram visitor alerts — 26 October 2026
 
-The two public portfolio pages load `assets/visitor-alerts.js` and its consent panel stylesheet. Alerts are disabled until a valid private server configuration is installed. Visitors must opt in before a notification is sent; privacy settings allow withdrawal. DNT/GPC and owner exclusion are respected. This feature is a visit notification service, not an identity lookup or an online visitor dashboard.
+The two public portfolio pages load `assets/visitor-alerts.js` without any popup or floating controls. Alerts are disabled until a valid private server configuration is installed. Visitors must opt in before a notification is sent; the footer’s Privacy & analytics link opens a separate page for opt-in and withdrawal. DNT/GPC and owner exclusion are respected. This feature is a visit notification service, not an identity lookup or an online visitor dashboard.
 
 The PHP endpoint at `api/visitor-alert.php` reads `domains/theakshaydev.space/private-visitor-alerts/telegram.json`, outside `public_html`. Keep that directory at mode 700 and the file at mode 600. JSON fields: `enabled` (boolean), `bot_token` (secret string), `chat_id` (private destination ID string). Never put the configuration into this repository, a public upload folder or a ZIP. PHP 8.1+ with cURL is required; no database or always-running worker is needed.
 
