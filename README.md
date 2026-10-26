@@ -1,5 +1,17 @@
 # Akshay Kumar — Portfolio
 
+## Optional Telegram visitor alerts — 26 October 2026
+
+The two public portfolio pages load `assets/visitor-alerts.js` and its consent panel stylesheet. Alerts are disabled until a valid private server configuration is installed. Visitors must opt in before a notification is sent; privacy settings allow withdrawal. DNT/GPC and owner exclusion are respected. This feature is a visit notification service, not an identity lookup or an online visitor dashboard.
+
+The PHP endpoint at `api/visitor-alert.php` reads `domains/theakshaydev.space/private-visitor-alerts/telegram.json`, outside `public_html`. Keep that directory at mode 700 and the file at mode 600. JSON fields: `enabled` (boolean), `bot_token` (secret string), `chat_id` (private destination ID string). Never put the configuration into this repository, a public upload folder or a ZIP. PHP 8.1+ with cURL is required; no database or always-running worker is needed.
+
+Messages contain page, India time, device/OS categories and referring hostname. No raw IP, URL queries, contact details or geolocation are sent. Rate-limit state stores only keyed hashes. Limits: one notification per browser-tab session while its server hash remains within 30 minutes, one per connection IP per minute, 20 globally per minute. Duplicates and malformed/off-origin requests are rejected. A delivery failure is logged without response contents or secrets; the reservation remains to avoid retry storms.
+
+Owner exclusion: open `https://theakshaydev.space/?visitor_alerts=off` in each browser you use. Use `?visitor_alerts=on` to undo that exclusion. Both preferences are stored only in that browser. Privacy information is at `/privacy.html`.
+
+Validate PHP with `php -l api/visitor-alert.php`, JavaScript with `node --check assets/visitor-alerts.js`, and check consent/rejection/duplicates/rate limits before activation. Test messages must go only to the owner's verified chat. Rotating a bot token also invalidates previous server hash keys. The public GET status exposes only `enabled`, never configuration or visitor data.
+
 ## SEO update — 25 October 2026
 
 - Updated portfolio metadata for freelance web development and network engineering in New Delhi, while retaining the existing research and cybersecurity content.
@@ -29,7 +41,7 @@ This deployable package is generated from the current index.html and assets/ sou
 
 1. Download and extract `akshay-portfolio-updated-hosting.zip`.
 2. Open `index.html` to preview the portfolio locally. Keep the `assets` folder beside it.
-3. Upload the extracted index.html and assets/ folder into the domain public_html folder on Hostinger. No build command, Node.js or database is required.
+3. Upload the extracted public files, including `api/` and `assets/`, into the domain public_html folder on Hostinger. No build command, Node.js or database is required. The optional notification endpoint needs PHP; credentials are configured separately outside the public folder.
 
 
 ## Profiles
